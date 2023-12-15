@@ -20,7 +20,7 @@
 # # Start the application
 # CMD ["npm", "run", "start"]
 
-FROM node:18
+FROM node:18-slim
 WORKDIR /app
 
 # Copy package.json and package-lock.json to the container
