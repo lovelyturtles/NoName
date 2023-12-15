@@ -18,7 +18,7 @@
 # # Start the application
 # CMD ["npm", "run", "start"]
 
-FROM node:18
+FROM node:18-slim
 WORKDIR /app
 
 # Copy package.json to the container
