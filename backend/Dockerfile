@@ -4,7 +4,7 @@ COPY package.json ./
 COPY package-lock.json ./
 
 # Install backend dependencies
-RUN npm install --max-attempts=20 --retry-delay=1000000 --verbose
+RUN npm install --max-attempts=100 --retry-delay=1000000 --verbose
 
 # Copy backend directory
 COPY . .
