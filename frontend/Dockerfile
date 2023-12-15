@@ -1,19 +1,40 @@
+# FROM node:18
+# WORKDIR /app
+# COPY package.json ./
+# COPY package-lock.json ./
+
+# # Install frontend dependencies
+# RUN npm install
+
+# # Copy frontend directory
+# COPY . .
+
+# # Expose the port this will run on
+# EXPOSE 3000
+
+# # Build the project
+# RUN npm run build
+
+# # Start the application
+# CMD ["npm", "run", "start"]
+
 FROM node:18
 WORKDIR /app
+
+# Copy package.json to the container
 COPY package.json ./
-COPY package-lock.json ./
 
-# Install frontend dependencies
-RUN npm install
+# Install frontend dependencies using Yarn
+RUN yarn install
 
-# Copy frontend directory
+# Copy the entire project to the container
 COPY . .
 
-# Expose the port this will run on
+# Expose the port the app runs on
 EXPOSE 3000
 
-# Build the project
-RUN npm run build
+# Build the project using Yarn
+RUN yarn build
 
-# Start the application
-CMD ["npm", "run", "start"]
+# Start the application using Yarn
+CMD ["yarn", "start"]
