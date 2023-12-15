@@ -27,7 +27,7 @@ WORKDIR /app
 COPY package.json ./
 
 # Install backend dependencies using Yarn
-RUN yarn install --network-timeout 1000000 --verbose
+RUN yarn install --network-timeout 1000000
 
 # Copy the entire project to the container
 COPY . .
