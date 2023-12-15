@@ -25,7 +25,6 @@ WORKDIR /app
 
 # Copy package.json and package-lock.json to the container
 COPY package.json ./
-COPY package-lock.json ./
 
 # Install backend dependencies using Yarn
 RUN yarn install
